@@ -5,7 +5,7 @@
 //  Created by Surya Dheeshjith on 05/08/19.
 //  Copyright © 2019 Surya Dheeshjith. All rights reserved.
 //
-// Implementing maps
+// Find the max consecutive ones in binary form of a decimal number
 
 long long getBin(int n)
 {
