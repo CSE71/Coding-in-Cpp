@@ -25,7 +25,7 @@ void swap(int *a, int *b)
 
 void Bubble_Sort(int A[],int n)
 {
-    for(int i=0;i<n;i++)
+    for(int i=0;i<n-1;i++)
     {
         for(int j=0;j<n-i-1;j++)
         {
