@@ -5,6 +5,8 @@
 //  Created by Surya Dheeshjith on 04/07/19.
 //  Copyright © 2019 Surya Dheeshjith. All rights reserved.
 //
+
+// Recursively remove all adjacent duplicates
 #include<algorithm>
 #include<iostream>
 #include<stack>
