@@ -6,6 +6,10 @@
 //
 //PS : Credits to Suhas for making me do this :)
 
+//l -> n, k++
+//k ->m, n--
+//n-1 -> l, m--
+//m-1 ->k, l++
 #include <iostream>
 using namespace std;
 
