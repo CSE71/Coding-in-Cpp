@@ -6,7 +6,7 @@
 //  Copyright © 2019 Surya Dheeshjith. All rights reserved.
 
 // Finding all anagrams
-
+//For example s= [mom], the list of all anagrammatic pairs is [m,m], [mo,om] 
 
 int sherlockAndAnagrams(string s) {
 
