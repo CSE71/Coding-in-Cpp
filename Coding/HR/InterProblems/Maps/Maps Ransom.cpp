@@ -29,15 +29,16 @@ for(int i=0;i<m;i++)
     {
         cout<<"No\n";
         return;
-        }
-        else if(mp[note[i]]==0)
-        {
-            cout<<"No\n";
-            return;
-        }
-        else
-        mp[note[i]]--;
-        }
-        cout<<"Yes\n";
-        
     }
+    else if(mp[note[i]]==0)
+    {
+        cout<<"No\n";
+        return;
+    }
+    else
+        mp[note[i]]--;
+}
+
+    cout<<"Yes\n";
+        
+}
