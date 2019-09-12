@@ -6,7 +6,7 @@
 //  Copyright © 2019 Surya Dheeshjith. All rights reserved.
 //
 void minimumBribes(vector<int> q) {
-int ans =0;
+    int ans =0;
     for(int i =q.size()-1;i>=0;i--)
     {
         if(q[i]-(i+1)>2)
