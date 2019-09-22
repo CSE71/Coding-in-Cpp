@@ -1,7 +1,4 @@
-//
-//  1.cpp
-//  Coding
-//
+
 //  Created by Surya Dheeshjith on 02/07/19.
 //  Copyright © 2019 Surya Dheeshjith. All rights reserved.
 
