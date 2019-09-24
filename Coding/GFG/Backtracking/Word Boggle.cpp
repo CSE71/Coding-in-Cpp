@@ -9,7 +9,9 @@
 
 #include<bits/stdc++.h>
 using namespace std;
+
 set<string> ans;
+
 struct trie{
   trie *arr[256];
   bool end;
