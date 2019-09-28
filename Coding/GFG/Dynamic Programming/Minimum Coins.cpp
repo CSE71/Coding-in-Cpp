@@ -5,7 +5,7 @@
 //  Copyright © 2019 Surya Dheeshjith. All rights reserved.
 
 
-//Minimum Coins (Can use same mu;ltiple times)
+//Minimum Coins (Can use same coin type multiple times)
 //1, 2, 5, 10, 20, 50, 100, 200, 500, 2000
 
 #include<iostream>
