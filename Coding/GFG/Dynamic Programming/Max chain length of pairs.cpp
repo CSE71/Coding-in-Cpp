@@ -1,5 +1,4 @@
 //
-//  1.cpp
 //  Coding
 //
 //  Created by Surya Dheeshjith on 02/07/19.
@@ -22,21 +21,18 @@ int maxChainLen(struct val p[],int n)
 //Your code here
     sort(p,p+n,compare);
     vector<int> count(n,1);
+    int max = 1;
     for(int i=1;i<n;i++)
     {
-        for(int j=0;j<n;j++)
+        for(int j=0;j<i;j++)
         {
             if(p[i].first>p[j].second && count[i]<count[j]+1)
             count[i]=count[j]+1;
+            if(max<count[i])
+            max = count[i];
         }
     }
-    int max = -1;
-    for(int i=0;i<n;i++)
-    {
-        if(max<count[i])
-        max = count[i];
-        
-    }
+    
     return max;
 }
 

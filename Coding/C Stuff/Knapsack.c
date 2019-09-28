@@ -22,9 +22,9 @@ int max(int i,int j)
 void knapsack()
 {
     int i,j;
-    for(i=0;i<N;i++)
+    for(i=0;i<=N;i++)
     {
-        for(j=0;j<W;j++)
+        for(j=0;j<=W;j++)
         {
             if(i==0 || j==0)
                 C[i][j]=0;
