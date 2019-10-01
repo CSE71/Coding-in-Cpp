@@ -80,42 +80,42 @@ int main()
                }
                };
                */
-                    void verticalOrder(Node *root)
-              {
-                  //Your code
-                  
-                  map<int,vector<int>>mp;
-                  queue<pair<Node*,int>> q;
-                  q.push({root,0});
-                  
-                  while(!q.empty())
-                  {
-                      pair<Node*,int> t = q.front();
-                      Node* temp = t.first;
-                      int dist = t.second;
-                      mp[dist].push_back(temp->data);
-                      q.pop();
-                      
-                      if(temp->left)
-                      {
-                          q.push({temp->left,dist-1});
-                      }
-                      
-                      if(temp->right)
-                      {
-                          q.push({temp->right,dist+1});
-                      }
-                      
-                      
-                      
-                  }
-                  
-                  for(auto i = mp.begin();i!=mp.end();i++)
-                  {
-                      vector<int> temp = i->second;
-                      for(auto x:temp)
-                      {
-                          cout<<x<<" ";
-                      }
-                  }
-              }
+void verticalOrder(Node *root)
+{
+  //Your code
+  
+  map<int,vector<int>>mp;
+  queue<pair<Node*,int>> q;
+  q.push({root,0});
+  
+  while(!q.empty())
+  {
+      pair<Node*,int> t = q.front();
+      Node* temp = t.first;
+      int dist = t.second;
+      mp[dist].push_back(temp->data);
+      q.pop();
+      
+      if(temp->left)
+      {
+          q.push({temp->left,dist-1});
+      }
+      
+      if(temp->right)
+      {
+          q.push({temp->right,dist+1});
+      }
+      
+      
+      
+  }
+  
+  for(auto i = mp.begin();i!=mp.end();i++)
+  {
+      vector<int> temp = i->second;
+      for(auto x:temp)
+      {
+          cout<<x<<" ";
+      }
+  }
+}

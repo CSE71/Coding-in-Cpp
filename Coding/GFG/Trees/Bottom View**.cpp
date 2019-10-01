@@ -119,7 +119,7 @@ void bottomView(Node *root)
         // time we find a node having same horizontal
         // distance we need to replace the data in
         // the map.
-        m[hd] = temp->data;
+        m[hd] = temp->data; // Keeps getting overwritten
         
         // If the dequeued node has a left child add
         // it to the queue with a horizontal distance hd-1.
