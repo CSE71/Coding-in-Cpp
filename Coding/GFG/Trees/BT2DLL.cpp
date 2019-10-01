@@ -61,41 +61,41 @@
     {
         int t;
         scanf("%d", &t);
-              while (t--)
-              {
-                  map<int, Node*> m;
-                  int n;
-                  scanf("%d",&n);
-                        Node *root = NULL;
-                        while (n--)
-                        {
-                            Node *parent;
-                            char lr;
-                            int n1, n2;
-                            scanf("%d %d %c", &n1, &n2, &lr);
-                            //  cout << n1 << " " << n2 << " " << (char)lr << endl;
-                            if (m.find(n1) == m.end())
-                            {
-                                parent = new Node(n1);
-                                m[n1] = parent;
-                                if (root == NULL)
-                                    root = parent;
-                            }
-                            else
-                                parent = m[n1];
-                            Node *child = new Node(n2);
-                            if (lr == 'L')
-                                parent->left = child;
-                            else
-                                parent->right = child;
-                            m[n2]  = child;
-                        }
-                        Node *head = NULL;
-                        bToDLL(root, &head);
-                        printList(head);
-                        }
-                        return 0;
-                        }
+      while (t--)
+      {
+          map<int, Node*> m;
+          int n;
+          scanf("%d",&n);
+                Node *root = NULL;
+                while (n--)
+                {
+                    Node *parent;
+                    char lr;
+                    int n1, n2;
+                    scanf("%d %d %c", &n1, &n2, &lr);
+                    //  cout << n1 << " " << n2 << " " << (char)lr << endl;
+                    if (m.find(n1) == m.end())
+                    {
+                        parent = new Node(n1);
+                        m[n1] = parent;
+                        if (root == NULL)
+                            root = parent;
+                    }
+                    else
+                        parent = m[n1];
+                    Node *child = new Node(n2);
+                    if (lr == 'L')
+                        parent->left = child;
+                    else
+                        parent->right = child;
+                    m[n2]  = child;
+                }
+                Node *head = NULL;
+                bToDLL(root, &head);
+                printList(head);
+                }
+                return 0;
+        }
                         
                         
                   /*This is a function problem.You only need to complete the function given below*/
@@ -112,20 +112,20 @@
                    }
                    };
                    */
-                        // This function should convert a given Binary tree to Doubly
-                        // Linked List
-                        void bToDLL(Node *root, Node **head)
-                  {
-                      // your code here
-                      if(root==NULL)
-                          return;
-                      
-                      bToDLL(root->right,head);
-                      
-                      root->right = *head;
-                      if(*head)
-                          (*head)->left = root;
-                      
-                      *head = root;
-                      bToDLL(root->left,head);
-                  }
+// This function should convert a given Binary tree to Doubly
+// Linked List
+void bToDLL(Node *root, Node **head)
+{
+  // your code here
+  if(root==NULL)
+      return;
+  
+  bToDLL(root->right,head);
+  
+  root->right = *head;
+  if(*head)
+      (*head)->left = root;
+  
+  *head = root;
+  bToDLL(root->left,head);
+}

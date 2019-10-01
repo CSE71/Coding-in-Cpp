@@ -140,7 +140,7 @@ int intersectPoint(Node* head1, Node* head2)
         return -1;
         
         
-        temp1=temp1->next;
+        temp1 = temp1->next;
         temp2 = temp2->next;
         
         

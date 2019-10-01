@@ -7,7 +7,7 @@
 Node * mergeKLists(Node *arr[], int N)
 {
        // Your code here
-       multiset<int> a;
+       multiset<int> a; //Multi valued and sorted set.
        for(int i=0;i<N;i++)
        {
            Node *temp = arr[i];

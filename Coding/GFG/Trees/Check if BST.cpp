@@ -81,23 +81,21 @@ int main()
                }
                }; */
                     
-                    
-                    int BST(Node* root, int min,int max)
-              {
-                  if(root==NULL)
-                      return 1;
-                  
-                  if(root->data<min || root->data>max)
-                  {
-                      return 0;
-                  }
-                  
-                  return BST(root->left,min,root->data-1) && BST(root->right,root->data+1,max);
-              }
-                    
-                    bool isBST(Node* root) {
-                        // Your code here
-                        return(BST(root,INT_MIN,INT_MAX));
-                        
-                    }
-                    
+    
+int BST(Node* root, int min,int max)
+{
+  if(root==NULL)
+  return 1;
+  
+  if(root->data<min || root->data>max)
+  return 0;
+  
+  return BST(root->left,min,root->data-1) && BST(root->right,root->data+1,max);
+}
+    
+bool isBST(Node* root)
+{
+    // Your code here
+    return(BST(root,INT_MIN,INT_MAX));
+}
+    

@@ -53,7 +53,7 @@ int main()
         a[1]=1;
         for(int i=2;i<=m;i++)
         {
-            if(i%2)
+            if(i%2)//odd
             a[i]=a[i-1]+1;
             
             else

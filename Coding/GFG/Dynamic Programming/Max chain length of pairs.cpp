@@ -35,7 +35,12 @@ int maxChainLen(struct val p[],int n)
     
     return max;
 }
-
+/*
+ 
+ 
+ SECOND ALGO
+ 
+ */
 //Greedy
 bool customSort (val a, val b) // Different sort. (The least p[].second will definetly be included)
 {

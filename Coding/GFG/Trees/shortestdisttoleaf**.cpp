@@ -42,19 +42,19 @@ int findClosestUtil(Node* root,char ch,int index,Node* ancestors[])
     
     if(root->data==ch)
     {
-        int res = distfromroot(root);
+        int res = distfromroot(root); //Just this would give the closest leaf from required node.
         
         
         for(int i=index-1;i>=0;i--)
         {
-            res= getmin(res,index - i +distfromroot(ancestors[i]));
+            res= getmin(res,index - i +distfromroot(ancestors[i])); // Find the closest leaf from the ancestors of required node.
             
             
         }
         return res;
     }
-    for(int i=0;i<index;i++)
-        cout<<ancestors[i]->data<<endl;
+//    for(int i=0;i<index;i++)
+//        cout<<ancestors[i]->data<<endl;
     ancestors[index] = root;
     return getmin(findClosestUtil(root->left,ch,index+1,ancestors),findClosestUtil(root->right,ch,index+1,ancestors));
 

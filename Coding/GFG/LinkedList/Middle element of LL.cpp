@@ -84,3 +84,8 @@ int getMiddle(Node *head);
                 }
                 return temp->data;
             }
+
+
+// Better way to use slow and fast pointer.
+
+// To get kth pointer from end. Take one pointer and go till kth pointer from beginning. Then take another pointer and traverse both untill the first pointer reaches the end.

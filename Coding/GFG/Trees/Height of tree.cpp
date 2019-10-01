@@ -12,7 +12,7 @@ int height(Node* node)
 {
     // Your code here
     if(node==NULL)
-        return 0;
+        return 0;// return -1 is actual
     
     int l = 1+height(node->left);
     int r = 1+height(node->right);

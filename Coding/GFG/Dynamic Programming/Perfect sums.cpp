@@ -31,11 +31,9 @@ int main() {
         for(int i = 1; i <= n; i++){
             for(int j = 1; j <= sum; j++){
                 dp[i][j] = dp[i-1][j];
-                if(v[i-1] <= j)
-                {
-                    // count of subsets that include (i-1)th element + those that skip (i-1)th element
-                    dp[i][j] = dp[i-1][j] + dp[i-1][j - v[i-1]];
-                }
+                if(v[i-1] <= j)// count of subsets that include (i-1)th element + those that skip (i-1)th element
+                dp[i][j] = dp[i-1][j] + dp[i-1][j - v[i-1]];
+                
             }
         }
         
