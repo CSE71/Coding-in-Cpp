@@ -5,7 +5,8 @@
 //  Created by Surya Dheeshjith on 04/07/19.
 //  Copyright © 2019 Surya Dheeshjith. All rights reserved.
 //
-//String Rotate
+//String Rotate by two places (Direction not given)
+
 #include<iostream>
 using namespace std;
 
