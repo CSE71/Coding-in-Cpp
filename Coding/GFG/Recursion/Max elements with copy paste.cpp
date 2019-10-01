@@ -31,7 +31,7 @@ int findoptimal(int n)
     for(int i=6;i<n;i++)
     {
         arr[i] = 0;
-        for(int j=i-3;j>=1;j--)
+        for(int j=i-3;j>=1;j--) //CTRL A, CTRL C, CTRL V
         {
             int curr = (i-j-1)*arr[j];
             if(curr>arr[i])
