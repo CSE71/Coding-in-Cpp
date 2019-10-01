@@ -78,51 +78,51 @@ int main()
                left = right = NULL;
                }
                }; */
-                    // Function to find height of the binary tree
-                    
-                    int height(struct Node* root)
-              {
-                  if(root==NULL)
-                      return 0;
-                  
-                  int l = 1 + height(root->left);
-                  int r = 1 + height(root->right);
-                  if(l>r)
-                      return l;
-                  else
-                      return r;
-              }
-                    
-                    void spiral(struct Node* root,int level,int flag)
-              {
-                  if(root==NULL)
-                      return;
-                  
-                  if(level==1)
-                      cout<<root->data<<" ";
-                  
-                  else
-                  {
-                      if(flag)
-                      {
-                          spiral(root->left,level-1,flag);
-                          spiral(root->right,level-1,flag);
-                      }
-                      else
-                      {
-                          spiral(root->right,level-1,flag);
-                          spiral(root->left,level-1,flag);
-                      }
-                  }
-              }
-                    
-                    void printSpiral(struct Node *root)
-              {
-                  int maxh = height(root);
-                  int flag=0;
-                  for(int i=1;i<=maxh;i++)
-                  {
-                      spiral(root,i,flag);
-                      flag = !flag;
-                  }
-              }
+    // Function to find height of the binary tree
+    
+int height(struct Node* root)
+{
+  if(root==NULL)
+      return 0;
+  
+  int l = 1 + height(root->left);
+  int r = 1 + height(root->right);
+  if(l>r)
+      return l;
+  else
+      return r;
+}
+    
+void spiral(struct Node* root,int level,int flag)
+{
+  if(root==NULL)
+      return;
+  
+  if(level==1)
+      cout<<root->data<<" ";
+  
+  else
+  {
+      if(flag)
+      {
+          spiral(root->left,level-1,flag);
+          spiral(root->right,level-1,flag);
+      }
+      else
+      {
+          spiral(root->right,level-1,flag);
+          spiral(root->left,level-1,flag);
+      }
+  }
+}
+    
+void printSpiral(struct Node *root)
+{
+  int maxh = height(root);
+  int flag=0;
+  for(int i=1;i<=maxh;i++)
+  {
+      spiral(root,i,flag);
+      flag = !flag;
+  }
+}
