@@ -33,10 +33,10 @@ int main()
             //vector<vector<bool>> dp(n+1,vector<bool>(sum/2+1,false));// Giving timeout.
             bool dp[n+1][sum/2+1];
             for(int i=0;i<=n;i++)
-            dp[i][0]=true;
+            dp[i][0]=true;// BASE
             
             for(int i=1;i<=sum/2;i++)
-            dp[0][i]=false;
+            dp[0][i]=false;// BASE
             
             for(int i=1;i<=n;i++)
             {

@@ -35,7 +35,7 @@ int main()
             w.push_back(ele);
         }
         
-        vector<vector<int>> dp(n+1,vector<int>(maxi+1,0));
+        vector<vector<int>> dp(n+1,vector<int>(maxi+1,0)); // BASE
         for(int i=1;i<=n;i++)
         {
             for(int j=1;j<=maxi;j++)

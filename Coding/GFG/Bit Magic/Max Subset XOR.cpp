@@ -28,7 +28,7 @@ int maxSubarrayXOR(int A[], int n)
         for(int j=0;j<n;j++)
         {
             if(j!=maxind && (A[j] & (1<<i))!=0)
-            A[j] ^= A[maxind];
+            A[j] ^= A[maxind];// XOR with elements that have ith bit set
         }
         index++;
     }

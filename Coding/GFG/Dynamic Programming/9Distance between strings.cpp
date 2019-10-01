@@ -17,10 +17,10 @@ int LCS(vector<vector<int>> dp,string a, string b,int m,int n)
         for(int j=0;j<=n;j++)
         {
             if(i==0)
-            dp[i][j]=j;
+            dp[i][j]=j;// BASE
             
             else if(j==0)
-            dp[i][j]=i;
+            dp[i][j]=i;// BASE
             
             else if(a[i-1]==b[j-1])
             dp[i][j] = dp[i-1][j-1];
@@ -45,7 +45,7 @@ int main()
         string a,b;
         cin>>m>>n;
         cin>>a>>b;
-        vector<vector<int>>dp(m+1,vector<int>(n+1,-1));
+        vector<vector<int>>dp(m+1,vector<int>(n+1,-1));// BASE
         cout<<LCS(dp,a,b,m,n)<<endl;
     }
 }

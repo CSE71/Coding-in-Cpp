@@ -21,7 +21,7 @@ int main()
         cin>>n>>m;
         string s1,s2;
         cin>>s1>>s2;
-        vector<vector<int>> dp(n+1,vector<int>(m+1,0));
+        vector<vector<int>> dp(n+1,vector<int>(m+1,0));// BASE
         int max =0;
         for(int i=1;i<=n;i++)
         {

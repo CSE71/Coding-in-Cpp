@@ -5,7 +5,7 @@
 //  Copyright © 2019 Surya Dheeshjith. All rights reserved.
 
 
-//Maximum sum uncreasing subsequence
+//Maximum sum increasing subsequence
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
@@ -27,7 +27,7 @@ int main()
             a.push_back(ele);
         }
         for(int i=0;i<n;i++)
-        dp[i] = a[i];
+        dp[i] = a[i];// BASE
         
         for(int i=1;i<n;i++)
         {

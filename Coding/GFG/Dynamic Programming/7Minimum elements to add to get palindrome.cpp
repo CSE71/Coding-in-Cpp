@@ -22,13 +22,13 @@ int main()
         cin>>s;
         string w=s;
         reverse(w.begin(),w.end());
-        vector<vector<int>>dp(w.size()+1,vector<int>(s.size()+1));
+        vector<vector<int>>dp(w.size()+1,vector<int>(s.size()+1));// BASE
         for(int i=0;i<=w.size();i++)
         {
             for(int j=0;j<=w.size();j++)
             {
                 if(i==0||j==0)
-                dp[i][j]=0;
+                dp[i][j]=0;// BASE
                 
                 else
                 {

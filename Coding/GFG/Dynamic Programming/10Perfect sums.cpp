@@ -23,10 +23,10 @@ int main() {
         cin >> sum;
         
        
-        vector<vector<int>> dp(n+1, vector<int>(sum+1, 0));
+        vector<vector<int>> dp(n+1, vector<int>(sum+1, 0));// BASE
         
-        for(int i = 0; i <= n; i++) dp[i][0] = 1; // empty subset always sums to 0
-        for(int j = 1; j <= sum; j++) dp[0][j] = 0; // empty subset cannot generate non zero sum
+        for(int i = 0; i <= n; i++) dp[i][0] = 1; // empty subset always sums to 0  // BASE
+        for(int j = 1; j <= sum; j++) dp[0][j] = 0; // empty subset cannot generate non zero sum  // BASE
         
         for(int i = 1; i <= n; i++){
             for(int j = 1; j <= sum; j++){

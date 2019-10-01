@@ -20,7 +20,7 @@ int maxChainLen(struct val p[],int n)
 {
 //Your code here
     sort(p,p+n,compare);
-    vector<int> count(n,1);
+    vector<int> count(n,1);// BASE
     int max = 1;
     for(int i=1;i<n;i++)
     {

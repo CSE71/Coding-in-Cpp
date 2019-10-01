@@ -19,7 +19,7 @@ int main()
         int n,ele;
         cin>>n;
         vector<int> num;
-        vector<int> a(n,1);
+        vector<int> a(n,1); // BASE
         for(int i=0;i<n;i++)
         {
             cin>>ele;
