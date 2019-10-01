@@ -101,38 +101,34 @@ int main()
                Node *nextRight;  // This has garbage value in input trees
                }; */
                             // Should set the nextRight for all nodes
-                            void util(Node* root,int l,map<int,vector<Node*>> &temp)
-              {
-                  if(root==NULL)
-                      return;
-                  
-                  temp[l].push_back(root);
-                  util(root->left,l+1,temp);
-                  util(root->right,l+1,temp);
-                  
-                  
-                  
-              }
-                            void connect(Node *root)
-              {
-                  if(root==NULL)
-                      return;
-                  map<int,vector<Node*>> mp;
-                  util(root,0,mp);
-                  for(auto i = mp.begin();i!=mp.end();i++)
-                  {
-                      for(int j=0;j<i->second.size();j++)
-                      {
-                          if(j==i->second.size()-1)
-                          {
-                              i->second[j]->nextRight = NULL;
-                          }
-                          else
-                          {
-                              i->second[j]->nextRight = i->second[j+1];
-                          }
-                      }
-                  }
-                  
-                  
-              }
+void util(Node* root,int l,map<int,vector<Node*>> &temp)
+{
+  if(root==NULL)
+      return;
+  
+  temp[l].push_back(root);
+  util(root->left,l+1,temp);
+  util(root->right,l+1,temp);
+  
+}
+void connect(Node *root)
+{
+  if(root==NULL)
+      return;
+  map<int,vector<Node*>> mp;
+  util(root,0,mp);
+  for(auto i = mp.begin();i!=mp.end();i++)
+  {
+      for(int j=0;j<i->second.size();j++)
+      {
+          if(j==i->second.size()-1)
+          i->second[j]->nextRight = NULL;
+          
+          else
+          i->second[j]->nextRight = i->second[j+1];
+          
+      }
+  }
+  
+  
+}
