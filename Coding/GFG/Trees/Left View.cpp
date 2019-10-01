@@ -80,27 +80,27 @@
                    };
                    */
                         // A wrapper over leftViewUtil()
-                        int maxl =0;
-                        void leftutil(Node *root,int level)
-                  {
-                      if(root == NULL)
-                          return;
-                      
-                      //cout<<"sdf";
-                      if(maxl<level)
-                      {
-                          cout<<root->data<<" ";
-                          maxl = level;
-                          //cout<<"sdf";
-                      }
-                      leftutil(root->left,level+1);
-                      leftutil(root->right,level+1);
-                  }
-                        
-                        void leftView(Node *root)
-                  {
-                      // Your code here
-                      maxl =0;
-                      leftutil(root,1);
-                      
-                  }
+int maxl =0;
+void leftutil(Node *root,int level)
+{
+  if(root == NULL)
+      return;
+  
+  //cout<<"sdf";
+  if(maxl<level)
+  {
+      cout<<root->data<<" ";
+      maxl = level;
+      //cout<<"sdf";
+  }
+  leftutil(root->left,level+1);
+  leftutil(root->right,level+1);
+}
+    
+void leftView(Node *root)
+{
+  // Your code here
+  maxl =0;
+  leftutil(root,1);
+  
+}
