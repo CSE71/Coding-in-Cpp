@@ -6,6 +6,9 @@
 
 
 //Minimum Jumps
+
+// For an array of numbers, each element represents the maximum number of steps that can be taken to reach the end. Find the minimal number of steps required to reach the end.
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
@@ -17,9 +20,9 @@ int mini(vector<int> arr,int n)
     if(arr[0]==0)
     return -1;
     
-    int maxrange = arr[0];
-    int steps = arr[0];
-    int jumps = 1;
+    int maxrange = arr[0]; // Points to the highest position that can be jumped to
+    int steps = arr[0]; // Steps that can be taken from an element
+    int jumps = 1; // Count
     
     for(int i=1;i<n;i++)
     {
@@ -32,7 +35,7 @@ int mini(vector<int> arr,int n)
         if(steps==0)
         {
             jumps++;
-            if(i>=maxrange)
+            if(i>=maxrange) // Cannot move from here.
             return -1;
             steps = maxrange - i;
             

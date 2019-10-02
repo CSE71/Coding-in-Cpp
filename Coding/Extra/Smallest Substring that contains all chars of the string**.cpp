@@ -16,7 +16,7 @@ string findminsubstring(string str)
     
     int dist_count =0;
     vector<int> ch(Max_c,0);
-    for(int i=0;i<n;i++)
+    for(int i=0;i<n;i++) // Find distinct chars and store in map
     {
         if(ch[str[i]]==0)
         {
@@ -34,7 +34,7 @@ string findminsubstring(string str)
         curr_count[str[i]]++;
         
         if(curr_count[str[i]]==1)
-            count++;
+            count++; // current distinct count
         
         if(count==dist_count)
         {

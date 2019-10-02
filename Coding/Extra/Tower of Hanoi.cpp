@@ -9,7 +9,7 @@
 using namespace std;
 
 void towerOfHanoi(int n, char from_rod,
-                  char to_rod, char aux_rod)  //SDT
+                  char to_rod, char aux_rod)  //SDT (Source Destination Temp)
 {
     if (n == 1)
     {
