@@ -3,7 +3,7 @@
 //
 //  Created by Surya Dheeshjith on 05/08/19.
 //  Copyright © 2019 Surya Dheeshjith. All rights reserved.
-// Find element with guven frequency efficiently
+// Find element with given frequency efficiently
 //You are given  queries. Each query is of the form two integers described below:
 //- 1 x : Insert x in your data structure.
 //- 2 y : Delete one occurence of y from your data structure, if present.
@@ -32,7 +32,7 @@ vector<int> freqQuery(vector<vector<int>> queries) {
             int a = map[queries[i][1]];
             if(a>0)
             {
-                freqmap[a]--;
+                freqmap[map[queries[i][1]]]--;
                 map[queries[i][1]]--;
                 freqmap[map[queries[i][1]]]++;
                 
