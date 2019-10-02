@@ -6,6 +6,7 @@
 //  Copyright © 2019 Surya Dheeshjith. All rights reserved.
 
 // Finding medium efficiently
+// Finds medium in a window of size d
 
 int getmed(vector<int> count,int d)
 {
@@ -40,8 +41,11 @@ int getmed(vector<int> count,int d)
         for(int i=0;i<201;i++)
         {
             if(freq[i]>=d/2+1)
-            {a1=2*i;
-                break;}
+            {
+                a1=2*i;
+                break;
+                
+            }
         }
     }
     

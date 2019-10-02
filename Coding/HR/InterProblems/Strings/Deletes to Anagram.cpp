@@ -20,22 +20,4 @@ int makeAnagram(string a, string b) {
     for (auto val : freq) { count += abs(val); }//Can be negative as string b can have elements that a does not.
     return count;
 }
-int main()
-{
-    ofstream fout(getenv("OUTPUT_PATH"));
-    
-    string a;
-    getline(cin, a);
-    
-    string b;
-    getline(cin, b);
-    
-    int res = makeAnagram(a, b);
-    
-    fout << res << "\n";
-    
-    fout.close();
-    
-    return 0;
-}
 
