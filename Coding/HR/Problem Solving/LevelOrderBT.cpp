@@ -11,7 +11,7 @@ void levelOrder(Node * root){
     //Write your code here
     Node* temp = root;
     queue<Node*> q;
-    while(temp)
+    while(1)
     {
         cout<<temp->data<<" ";
         if(temp->left)q.push(temp->left);
@@ -23,7 +23,7 @@ void levelOrder(Node * root){
             q.pop();
         }
         else
-            temp = NULL;
+            break;
     }
     
     
