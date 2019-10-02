@@ -123,6 +123,6 @@ void printSpiral(struct Node *root)
   for(int i=1;i<=maxh;i++)
   {
       spiral(root,i,flag);
-      flag = !flag;
+      flag = !flag; // Changes direction
   }
 }

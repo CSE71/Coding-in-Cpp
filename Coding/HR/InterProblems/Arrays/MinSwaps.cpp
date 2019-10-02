@@ -17,7 +17,7 @@ int minimumSwaps(vector<int> arr) {
     }
     vector<int> v(n,0);
     
-    sort(p,p+n);
+    sort(p,p+n);//Important
     int cycle,swaps=0;
     for(int i=0;i<n;i++)
     {
