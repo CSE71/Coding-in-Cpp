@@ -8,7 +8,7 @@
 // Find the number of combinations of n and x where 0<=x<=n s.th sum of n+x = n^x
 long c = 0
 while(n){
-     c += n%2?0:1;
+     c += n%2?0:1; // if(n%2==0) return 1; else return 0;
      n/=2;
 }
 c=pow(2,c);

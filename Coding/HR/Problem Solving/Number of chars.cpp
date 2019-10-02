@@ -6,6 +6,8 @@
 //  Copyright © 2019 Surya Dheeshjith. All rights reserved.
 //
 //Number of 'a's in a repeated string with specified length
+
+// Given a string s. Repeat it till a spcific integer. Then find number of repeated as.
 long repeatedString(string s, long n) {
     
     long long int na =0,total =0;

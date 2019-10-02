@@ -6,6 +6,8 @@
 //  Created by Surya Dheeshjith on 07/08/19.
 //  Copyright © 2019 Surya Dheeshjith. All rights reserved.
 //
+
+// Credits to Vishak for making me do this :)
 bool isPrime(int num){
     bool flag=true;
     for(int i = 2; i <= num / 2; i++) {
