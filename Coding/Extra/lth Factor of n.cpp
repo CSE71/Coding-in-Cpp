@@ -22,9 +22,9 @@ int main()
             arr[k++] = i;
         }
     }
-    for(int i=0;i<k;i++)
-        cout<<arr[i]<<" ";
-    cout<<endl;
+//    for(int i=0;i<k;i++)
+//        cout<<arr[i]<<" ";
+//    cout<<endl;
     if(sqrt(n) != (int)sqrt(n))
     {
         if(l>2*k)

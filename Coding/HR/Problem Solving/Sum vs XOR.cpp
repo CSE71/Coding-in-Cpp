@@ -14,4 +14,9 @@ while(n){
 c=pow(2,c);
 
 
-//Find number of zeros and 2 power it.
+/*
+  The similarity between sum and xor is the same without the consideration of carry.
+ So, for the 1 bits in n, there is no choice but to put 0 to avoid carry. But for 0 bits, we can either put 1 or 0. So result is 2^(number of zeros).
+ */
+
+

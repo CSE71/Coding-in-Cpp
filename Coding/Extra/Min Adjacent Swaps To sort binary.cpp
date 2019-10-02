@@ -4,7 +4,9 @@
 //  Created by Surya Dheeshjith on 09/08/19.
 //  Copyright © 2019 Surya Dheeshjith. All rights reserved.
 //
-// Min and Max of three numbers without conditional statements
+// Min adjacent swaps to sort Binary
+// IP : 1001011 --> 0001111,  OP: 4
+
 
 #include<iostream>
 using namespace std;
@@ -18,14 +20,14 @@ int swaps(int arr[],int n)
     {
         a[i] = a[i+1];
         if(arr[i]==0)
-            a[i]++;
+            a[i]++;   // Stores number of zeros from right
         
     }
     int count =0;
     for(int i=0;i<n;i++)
     {
         if(arr[i]==1)
-            count+=a[i];
+            count+=a[i];  // Number of zeros to cross for each one
     }
     
     return count;
