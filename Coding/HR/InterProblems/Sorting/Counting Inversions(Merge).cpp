@@ -7,6 +7,8 @@
 
 // Merge sort : Counting Inversions
 
+// To count the number of adjacent swaps to get sorted array.
+
 #include<iostream>
 #include<cstdio>
 
@@ -19,8 +21,6 @@ void mergei(int a[],int low,int mid,int high)
     
     while(i<=mid && j<=high)
     {
-        
-        
         if(a[i]<=a[j]) // < =
             b[k++] = a[i++];
         else
@@ -30,21 +30,16 @@ void mergei(int a[],int low,int mid,int high)
         }
     }
     while(i<=mid)
-    {
+    b[k++] = a[i++];
         
-        b[k++] = a[i++];
-        
-    }
+    
     while(j<=high)
-    {
-        
-        b[k++] = a[j++];
-    }
+    b[k++] = a[j++];
+    
     
     for(i=low;i<=high;i++)
-    {
-        a[i] = b[i];
-    }
+    a[i] = b[i];
+    
     
 }
 
@@ -66,10 +61,10 @@ int main()
     {
         int n;
         ans=0;
-        scanf("%d",&n);
-        int * a = new int[n];
+        cin>>n;
+        int a[n];
         for(int i=0;i<n;i++)
-            scanf("%d",&a[i]);
+            cin>>a[i];
         m_sort(a,0,n-1);
         cout<<ans<<endl;
         

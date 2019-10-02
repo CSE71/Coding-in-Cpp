@@ -3,7 +3,7 @@
 //
 //  Created by Surya Dheeshjith on 05/08/19.
 //  Copyright © 2019 Surya Dheeshjith. All rights reserved.
-//Find if common words are present in magazine
+// Find if common words are present in magazine
 
 void checkMagazine(vector<string> magazine, vector<string> note) {
 
