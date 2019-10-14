@@ -15,7 +15,7 @@ void heapify(int a[],int i)
 {
     int k=i,v= a[i],flag =0,j;
     
-    while(!flag && 2*k<=len)
+    while(!flag && 2*k<=len)//IMP
     {
         count++;
         j = 2*k;
@@ -55,7 +55,7 @@ void heapsort1(int a[])
         temp = a[i];
         a[i]=a[1];
         a[1]=temp;
-        len--;
+        len--; //IMP
         heapify(a,1);
     }
     
