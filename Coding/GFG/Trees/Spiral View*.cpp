@@ -105,7 +105,7 @@ void spiral(struct Node* root,int level,int flag)
   {
       if(flag)
       {
-          spiral(root->left,level-1,flag);
+          spiral(root->left,level-1,flag); //Needs to reduce level (traverse left level times) to 1 to reach required level.
           spiral(root->right,level-1,flag);
       }
       else

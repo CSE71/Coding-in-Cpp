@@ -53,8 +53,7 @@ int findClosestUtil(Node* root,char ch,int index,Node* ancestors[])
         }
         return res;
     }
-//    for(int i=0;i<index;i++)
-//        cout<<ancestors[i]->data<<endl;
+
     ancestors[index] = root;
     return getmin(findClosestUtil(root->left,ch,index+1,ancestors),findClosestUtil(root->right,ch,index+1,ancestors));
 
