@@ -1,5 +1,4 @@
-//
-//  23.cpp
+
 //  Coding
 //
 //  Created by Surya Dheeshjith on 07/07/19.
