@@ -8,58 +8,59 @@
 
 //Continous Subarray sum 
 
-#include <iostream>
-#include<vector>
+#include</Users/suryad/Coding/Coding/Coding/stdc++.h>
+#define pii pair<int,int>
+#define mpii(a,b) make_pair(a,b)
 using namespace std;
 
-int main() {
-    //code
-    int a,n,sum,num;
-    vector<int> arr;
-    cin>>a;
-    for(int i=0;i<a;i++)
+pii findpos(vector<int> a,int k)
+{
+
+    int curr=0,start=0;
+    for(int i=0;i<a.size();i++)
     {
-        cin>>n>>sum;
-        for(int j=0;j<n;j++)
+        curr+= a[i];
+        
+        while(curr>k)
         {
-            cin>>num;
-            arr.push_back(num);
+            curr-= a[start];
+            start++;
         }
         
-        int summ,pos,flag=0;
-        for(int j=0;j<n;j++)
+        if(curr==k)
+            return mpii(start,i-start+1);
+        
+        
+    }
+    return mpii(-1,-1);
+}
+
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        vector<int> a;
+        int n;
+        cin>>n;
+        int k;
+        cin>>k;
+        for(int i=0;i<n;i++)
         {
-            summ=arr[j];
-            pos =j;
-            if(summ==sum)
-            {
-                cout<<pos+1<<" "<<pos+1<<"\n";
-                flag=1;
-                break;
-            }
-            for(int k=j+1;k<n;k++)
-            {
-                summ+=arr[k];
-                if(summ>sum)
-                break;
-                else if(summ<sum)
-                continue;
-                else
-                {
-                    cout<<pos+1<<" "<<k+1<<"\n";
-                    flag=1;
-                    break;
-                }
-                
-            }
-            if(flag==1)
-            break;
-            
+            int ele;
+            cin>>ele;
+            a.push_back(ele);
         }
-        if(flag!=1)
-        cout<<-1<<"\n";
-        arr.clear();
+        
+        
+        pii p = findpos(a,k);
+        if(p.first!=-1)
+            cout<<"Start = "<<p.first<<", Length = "<<p.second<<endl;
+        
+        else
+            cout<<"Not found"<<endl;
+        
     }
     
-    return 0;
 }

@@ -89,3 +89,15 @@ int getMiddle(Node *head);
 // Better way to use slow and fast pointer.
 
 // To get kth pointer from end. Take one pointer and go till kth pointer from beginning. Then take another pointer and traverse both untill the first pointer reaches the end.
+
+
+int findMid(node* head)
+{
+    node* slow=head,*fast = head;
+    while(fast->next && fast->next->next)
+    {
+        slow = slow->next;
+        fast = fast->next->next;
+    }
+    return slow->data;
+}

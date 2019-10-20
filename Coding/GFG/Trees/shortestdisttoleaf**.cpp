@@ -55,7 +55,7 @@ int findClosestUtil(Node* root,char ch,int index,Node* ancestors[])
     }
 
     ancestors[index] = root;
-    return getmin(findClosestUtil(root->left,ch,index+1,ancestors),findClosestUtil(root->right,ch,index+1,ancestors));
+    return getmin(findClosestUtil(root->left,ch,index+1,ancestors),findClosestUtil(root->right,ch,index+1,ancestors));// Multiple nodes with same value
 
 }
 

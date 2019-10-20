@@ -8,44 +8,37 @@
 
 //Find largest frequency element (Also must have more elements than n/2)
 
-#include <iostream>
 #include<bits/stdc++.h>
 using namespace std;
 
-long int largest(int arr[],int n,int maxnum)
+int main()
 {
-    int a[1000001]={0},maxtl=0,maxi;
-    for(int i=0;i<n;i++)
-    a[arr[i]]++;
-    for(int i=0;i<=maxnum;i++)
-    if(a[i]>n/2)
-    if(maxtl<a[i])
+    int t;
+    cin>>t;
+    while(t--)
     {
-        maxtl = a[i];
-        maxi = i;
-    }
-    if(maxtl>n/2)
-    return maxi;
-    else
-    return -1;
-}
-
-
-int main() {
-    //code
-    int a,maxi,n;
-    cin>>a;
-    for(int i=0;i<a;i++)
-    {
+        int n;
         cin>>n;
-        int arr[n],maxnum=0;
-        for(int j=0;j<n;j++)
+        
+        vector<int> a;
+        unordered_map<int,int> mp;
+        for(int i=0;i<n;i++)
         {
-            cin>>arr[j];
-            maxnum = max(maxnum,arr[j]);
+            int ele;
+            cin>>ele;
+            a.push_back(ele);
+            if(mp.find(ele)==mp.end())
+                mp[ele]=1;
+            else
+                mp[ele]++;
+            
         }
-        maxi = largest(arr,n,maxnum);
-        cout<<maxi<<"\n";
+        int max=-1;
+        for(auto x=mp.begin();x!=mp.end();x++)
+        {
+            if(max<x->second && x->second>n/2)
+                max = x->second;
+        }
+        cout<<max<<endl;
     }
-    return 0;
 }
