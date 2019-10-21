@@ -7,6 +7,8 @@
 
 //Egg dropping puzzle
 
+// k = Number of floors ; n = Number of eggs
+
 /*
  O(n*k^2)
  */
