@@ -25,12 +25,12 @@ int main()
         cin>>n>>k;
         vector<vector<int>>dp(n+1,vector<int>(k+1,INT_MAX));
         
-        for(int i=0;i<=n;i++)
+        for(int i=0;i<=n;i++) // BASE
         {
             dp[i][0]=0;
             dp[i][1]=1;
         }
-        for(int i=1;i<=k;i++)
+        for(int i=1;i<=k;i++) // BASE
         dp[1][i] = i;
         
         for(int i=2;i<=n;i++)
