@@ -29,13 +29,13 @@ int main()
             {
                 if(s1[i-1]==s2[j-1])
                 {
-                    dp[i][j]= dp[i-1][j-1]+1;
+                    dp[i][j]= 1 + dp[i-1][j-1];
                     if(maxi<dp[i][j])
                     maxi = dp[i][j];
                 }
                 else
                 {
-                    dp[i][j] = max(dp[i-1][j],dp[i][j-1]);
+                    dp[i][j] = max(dp[i-1][j],dp[i][j-1]);// Longest common
                 }
             }
         }

@@ -3,7 +3,7 @@
 //  Copyright © 2019 Surya Dheeshjith. All rights reserved.
 
 
-//Rearrange Chars
+//Rearrange Characters to get no same adjacent characters
 
 #include<iostream>
 #include<bits/stdc++.h>

@@ -26,7 +26,7 @@ int LCS(vector<vector<int>> dp,string a, string b,int m,int n)
             dp[i][j] = dp[i-1][j-1];
             
             else
-            dp[i][j] =1+ min(dp[i-1][j],min(dp[i][j-1],dp[i-1][j-1]));
+            dp[i][j] =1+ min(dp[i-1][j],min(dp[i][j-1],dp[i-1][j-1])); // Add/Remove/Replace
         }
     }
     return dp[m][n];
