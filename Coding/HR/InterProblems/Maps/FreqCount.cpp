@@ -13,8 +13,8 @@
 vector<int> freqQuery(vector<vector<int>> queries) {
     
     vector<int> ret;
-    unordered_map<long,int> map;
-    unordered_map<int,long> freqmap; //Efficiency
+    unordered_map<long,int> map; // Stores the frequency of a particular element
+    unordered_map<int,long> freqmap; //Stores the number of values for a given frequency //Efficiency
     ret.clear();
     for(int i=0;i<queries.size();i++)
     {
@@ -29,8 +29,7 @@ vector<int> freqQuery(vector<vector<int>> queries) {
         else if(queries[i][0]==2)
         {
             
-            int a = map[queries[i][1]];
-            if(a>0)
+            if(map[queries[i][1]]>0)
             {
                 freqmap[map[queries[i][1]]]--;
                 map[queries[i][1]]--;

@@ -12,7 +12,7 @@
 #include<bits/stdc++.h>
 #define SPEED ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
 using namespace std;
-int arr[] = { 1, 2, 5, 10, 20, 50, 100, 200, 500, 2000} ;
+int arr[] = { 1, 2, 5, 10, 20, 50, 100, 200, 500, 2000} ; //10
 void solvemincoins(int n)
 {
     vector<vector<int>>a(11,vector<int>(n+1,0));
@@ -20,8 +20,11 @@ void solvemincoins(int n)
     
     for(int i=1;i<=n;i++)
     {
-        a[1][i] = i;// For 1
+        a[1][i] = i;// For 1 // BASE
     }
+    
+    // All values in column 0 are 0. For value 0, 0 coins required // BASE
+     
     for(int i=2;i<=10;i++)
     {
         for(int j=1;j<=n;j++)

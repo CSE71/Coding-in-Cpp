@@ -5,7 +5,7 @@
 //  Created by Surya Dheeshjith on 05/08/19.
 //  Copyright © 2019 Surya Dheeshjith. All rights reserved.
 
-// Finding medium efficiently
+// Finding medium efficiently with constraint that values lie only between 0 - 200
 // Finds medium in a window of size d
 
 int getmed(vector<int> count,int d)
@@ -21,7 +21,7 @@ int getmed(vector<int> count,int d)
     {   int i=0;
         for(;i<201;i++)
         {
-            if(freq[i]>=d/2)
+            if(freq[i]>=d/2)  //Sum of Frequency greater than or equal to no. of elements/2 
             {
                 a1=i;
                 break;

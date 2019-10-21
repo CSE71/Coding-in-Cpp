@@ -5,7 +5,9 @@
 //  Created by Surya Dheeshjith on 05/08/19.
 //  Copyright © 2019 Surya Dheeshjith. All rights reserved.
 
-// How many deletions to get an anagram
+// Anagrams are rearrangement of letters in a string. ex - anagram ; gamrana
+
+// Find minimum number of changes to get an anagram
 
 #include <bits/stdc++.h>
 

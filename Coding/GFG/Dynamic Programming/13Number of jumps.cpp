@@ -19,8 +19,8 @@ int main()
         cin>>n;
         long a[n];
         a[0]=1;
-        a[1]=2;
-        a[2]=4;
+        a[1]=1;
+        a[2]=2;
         for(int i=3;i<n;i++)
         {
             a[i]=a[i-1]+a[i-2]+a[i-3];  // Add the number of ways to reach 1, 2 and 3 less than N.
