@@ -10,112 +10,90 @@
 // 1->2->3->30->4->5->6 == > 3->2->1->30->6->5->4
 #include</Users/suryad/Coding/Coding/Coding/stdc++.h>
 using namespace std;
+
 typedef struct node{
+    
     int data;
     struct node* next;
 }node;
 
-node* insert(node* head,int ele)
+node* insertnode(node* head,int ele)
 {
     node* newnode = new node;
-    newnode->data = ele;
     newnode->next = NULL;
-    if(head==NULL)
-    return newnode;
+    newnode->data = ele;
+    if(!head)
+        return newnode;
     
-    else
-    {
-        node* temp=head;
-        while(temp->next)
+    node* temp = head;
+    while(temp->next)
         temp = temp->next;
-        
-        temp->next = newnode;
-        
-    }
+    
+    temp->next = newnode;
     return head;
 }
 
-node* reversehalf(node* head)
+
+node* reverseinG(node* head,int k,int flag)
 {
-    node* slow=head,*fast=head;
-    node* prev = NULL;
-    node* after = slow->next;
-    int count =0;
-    while(fast->next && fast->next->next)
+    node* temp =head,*prev = NULL,*after;
+    int count=0;
+    while(temp && count<k)
     {
-        //slow=slow->next;
-        //cout<<slow->data;
         count++;
-        fast = fast->next->next;
-        after = slow->next;
-        slow->next = prev;
-        prev = slow;
-        slow = after;
-        
-        
+        after = temp->next;
+        temp->next = prev;
+        prev = temp;
+        temp = after;
     }
     
-    node* p1 = prev;
-    node* p = slow;
-    if(count%2!=0)
+    if(temp)
     {
-        head->next = slow;
-        prev = NULL;
-        slow = slow->next;
-        while(after)
+        if(!flag)
+            head->next = reverseinG(temp,k,flag);
+        else
         {
-            after = slow->next;
-            slow->next = prev;
-            prev = slow;
-            slow = after;
-            
+            head->next = temp;
+            temp->next = reverseinG(temp->next,k,flag);
             
         }
-        p->next = prev;
+            
     }
-    
-    else
-    {
-        p1 = after;
-        node* p2 = after->next;
-        p1->next = prev;
-        prev=NULL;
-        slow = p2;
-        while(after)
-        {
-            after = slow->next;
-            slow->next = prev;
-            prev = slow;
-            slow = after;
-        }
         
-        head->next = prev;
     
-    }
-    
-    return p1;
+    return prev;
 }
 
 int main()
 {
+    node* head = NULL;
     int n;
     cin>>n;
-    int ele;
-    node* head=NULL;
-    
-    
     for(int i=0;i<n;i++)
     {
+        int ele;
         cin>>ele;
-        head = insert(head,ele);
+        head = insertnode(head,ele);
     }
+    //int k;
+    //cin>>k;
+    int flag;
     
-    head = reversehalf(head);
+    if(n%2==0)
+        flag =0;
+    else
+        flag=1;
+    
+    head = reverseinG(head,n/2,flag);
+    
     node* temp = head;
     while(temp)
     {
-        cout<<temp->data<<"->";
+        cout<<temp->data<<" ";
         temp = temp->next;
     }
+    
+    
+    
 }
 

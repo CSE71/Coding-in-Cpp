@@ -35,7 +35,7 @@ int main()
             for(int i=0;i<=n;i++)
             dp[i][0]=true;// BASE
             
-            for(int i=1;i<=sum/2;i++)
+            for(int i=1;i<=sum/2;i++) // From 1.
             dp[0][i]=false;// BASE
             
             for(int i=1;i<=n;i++)
@@ -44,7 +44,7 @@ int main()
                 {
                    dp[i][j] = dp[i-1][j];
                    if(j>=a[i-1])
-                   dp[i][j] = dp[i-1][j]||dp[i-1][j-a[i-1]];
+                   dp[i][j] = dp[i-1][j] || dp[i-1][j-a[i-1]];
                    
                 }
             }

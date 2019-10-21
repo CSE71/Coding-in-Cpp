@@ -27,7 +27,7 @@ int main()
         }
         int t= sum/2;
         vector<vector<int>> dp(n+1,vector<int>(t+1));
-        for(int i=0;i<=n;i++)
+        for(int i=0;i<=n;i++) // Find maximum value close to sum/2 (Let it be a)
         {
             for(int j=0;j<=t;j++)
             {
@@ -43,6 +43,6 @@ int main()
                 }
             }
         }
-        cout<<sum-2*dp[n][t]<<endl;
+        cout<<sum-2*dp[n][t]<<endl;// a = dp[n][t] ; b = sum - dp[n][t] ; b - a = sum - 2* dp[n][t]
     }
 }
