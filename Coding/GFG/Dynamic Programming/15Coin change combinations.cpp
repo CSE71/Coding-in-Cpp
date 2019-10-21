@@ -6,6 +6,9 @@
 
 
 //Coin change combinations
+
+//Similar to perfect sums
+
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
