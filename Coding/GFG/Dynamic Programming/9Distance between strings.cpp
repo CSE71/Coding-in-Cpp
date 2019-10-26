@@ -10,8 +10,9 @@
 #include<bits/stdc++.h>
 #define SPEED ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
 using namespace std;
-int LCS(vector<vector<int>> dp,string a, string b,int m,int n)
+int LCS(string a, string b,int m,int n)
 {
+    vector<vector<int>>dp(m+1,vector<int>(n+1,-1));// BASE
     for(int i=0;i<=m;i++)
     {
         for(int j=0;j<=n;j++)
@@ -45,7 +46,6 @@ int main()
         string a,b;
         cin>>m>>n;
         cin>>a>>b;
-        vector<vector<int>>dp(m+1,vector<int>(n+1,-1));// BASE
-        cout<<LCS(dp,a,b,m,n)<<endl;
+        cout<<LCS(a,b,m,n)<<endl;
     }
 }
