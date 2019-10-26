@@ -43,7 +43,7 @@ int maxHeight(int h[],int w[],int l[],int n)
     sort(box.begin(),box.end(),compare);
     vector<int> ht;
     for(int i=0;i<3*n;i++)
-    ht.push_back(get<2>(box[i]));
+    ht.push_back(get<2>(box[i])); //BASE
     int maxh =0;
     for(int i=1;i<3*n;i++)
     {

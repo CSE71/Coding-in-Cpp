@@ -43,7 +43,7 @@ void solvemincoins(int n)
             cout<<arr[i-1]<<" ";
             j = j-arr[i-1];
         }
-        else
+        else  //IMP
         i--;
     }
 }
