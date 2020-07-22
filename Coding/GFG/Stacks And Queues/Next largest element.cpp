@@ -6,7 +6,10 @@
 //  Copyright © 2019 Surya Dheeshjith. All rights reserved.
 //
 
-//Next largest element
+//Next largest element in an array.
+//Given an array A of size N having distinct elements, the task is to find the next greater element for each element
+//of the array in order of their appearance in the array. If no such element exists, output -1
+
 //Two methods
 
 
@@ -22,16 +25,16 @@ int main()
     cin>>t;
     while(t--)
     {
-        
+
         int n;
         cin>>n;
-        
+
         for(int i=0;i<n;i++)
         {
             cin>>arr[i];
         }
-        
-        
+
+
         s.push(arr[0]);
         for(int i=1;i<n;i++)
         {
@@ -39,33 +42,33 @@ int main()
             s.push(arr[i]);
             else
             {
-                
+
                 while(!s.empty()&&s.top()<arr[i])
                 {
                     mp[s.top()]=arr[i];
                     s.pop();
-                    
+
                 }
-                
+
                 s.push(arr[i]);
             }
-            
+
         }
         while(!s.empty())
         {
             mp[s.top()]=-1;
             s.pop();
         }
-        
+
         for(int i=0;i<n;i++)
         cout<<mp[arr[i]]<<" ";
         cout<<endl;
-        
+
         mp.clear();
         while(!s.empty())
         s.pop();
-        
-        
+
+
     }
     return 0;
 }
@@ -104,9 +107,9 @@ void nextLarge(int arr[],int n)
         }
         if(flag==0)
         cout<<"-1 ";
-        
+
     }
-    
+
 }
 int main()
 {

@@ -9,6 +9,9 @@
 
 //Min element in stack
 
+//You are given N elements and your task is to Implement a Stack in which you can get minimum element in O(1) time.
+// Range 0-100
+
 
 #include<bits/stdc++.h>
     using namespace std;
@@ -53,7 +56,7 @@
             cout<<endl;
         }
     }
-    
+
 
 /*This is a function problem.You only need to complete the function given below*/
 /*
@@ -73,18 +76,18 @@ int _stack :: getMin()
     //Your code here
     stack<int> a;
     stack<int> b;
-    
+
     int min = 101;
     if(s.empty())
     return -1;
-    
+
     while(!s.empty())
     {
         a.push(s.top());
-        
+
         if(min>s.top())
         min = s.top();
-        
+
         s.pop();
     }
     while(!a.empty())
@@ -92,11 +95,11 @@ int _stack :: getMin()
         s.push(a.top());
         a.pop();
     }
-    
+
     minEle = min;
     return min;
-    
-    
+
+
 }
 /*returns poped element from stack*/
 int _stack ::pop()
@@ -104,7 +107,7 @@ int _stack ::pop()
     //Your code here
     if(s.empty())
     return -1;
-    
+
     int c = s.top();
     s.pop();
     return c;
@@ -115,4 +118,3 @@ void _stack::push(int x)
     //Your code here
     s.push(x);
 }
-

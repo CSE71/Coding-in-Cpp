@@ -7,6 +7,9 @@
 //
 
 // LRU cache
+//We are given total possible page numbers that can be referred. We are also given cache (or memory) size (Number of page frames that cache can hold at a time). The LRU caching scheme is to remove the least
+//recently used frame when the cache is full and a new page is referenced which is not there in cache.
+
 // SET AND GET.
 // LIMIT ON CAPACITY, N. IF SET, AND IT EXISTS NEED TO REPLACE VALUE AND PUT IT ON TOP. IF DOES NOT EXIST CHECK CAPACITY IF IT CAN BE PUSHED DIRECTLY OTHERWISE LAST ELEMENT (LEAST RECENTLY USED) MUST BE REMOVED
 // FOR GET, IF EXISTS YOU NEED TO OUTPUT VALUE AND PUT ON TOP....
@@ -21,9 +24,9 @@
         int n;
         public:
         LRUCache(int );
-        
+
         int get(int );
-        
+
         void set(int , int );
     };
     int main()
@@ -87,7 +90,7 @@ LRUCache::LRUCache(int N)
     while(!key.empty())
     key.pop();
     fill_n(arr, n, 2000);
-    
+
 }
 /*Sets the key x with value y in the LRU cache */
 void LRUCache::set(int x, int y)
@@ -99,7 +102,7 @@ void LRUCache::set(int x, int y)
     // printk(key);
     while(!key.empty())
     {
-        
+
         int k = key.top();
         temp.push(k);
         if(k == x)
@@ -111,8 +114,8 @@ void LRUCache::set(int x, int y)
         }
         key.pop();
         count++;
-        
-        
+
+
     }
     int k;
     if(flag==1)
@@ -120,13 +123,13 @@ void LRUCache::set(int x, int y)
         k = temp.top();
         temp.pop();
     }
-    
+
     while(!temp.empty())
     {
         key.push(temp.top());
         temp.pop();
     }
-    
+
     if(flag==1)
     {
         key.push(k);
@@ -144,15 +147,15 @@ void LRUCache::set(int x, int y)
             {
                 temp.push(key.top());
                 key.pop();
-                
+
             }
             temp.pop();
-            
+
             while(!temp.empty())
             {
                 key.push(temp.top());
                 temp.pop();
-                
+
             }
             key.push(x);
             arr[x] = y;
@@ -164,12 +167,12 @@ void LRUCache::set(int x, int y)
 int LRUCache::get(int x)
 {
     //Your code here
-    
+
     stack<int> temp;
-    
+
     if(key.empty())
     return -1;
-    
+
     int flag=0,a;
     int k;
     while(!key.empty())
@@ -183,9 +186,9 @@ int LRUCache::get(int x)
             key.pop();
             break;
         }
-        
+
         key.pop();
-        
+
     }
     int fu ; ///// AFTER GET WE NEED TO PUT IT ON TOP OF STACK
     if(flag==1)
@@ -198,10 +201,10 @@ int LRUCache::get(int x)
         key.push(temp.top());
         temp.pop();
     }
-    
+
     if(flag==0)
     return -1;
-    
+
     key.push(fu);
     return a;
 }

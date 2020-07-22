@@ -6,7 +6,7 @@
 //  Copyright © 2019 Surya Dheeshjith. All rights reserved.
 //
 //Balance Paranthesis
-
+// Check if a string of paranthesis are balanced
 
 #include<iostream>
 #include</Users/suryad/Coding/Coding/Coding/stdc++.h>
@@ -15,7 +15,7 @@ using namespace std;
 stack<char> st;
 bool iscor(char ch)
 {
-    
+
     if(st.empty())
     return false;
     char c = st.top();
@@ -33,7 +33,7 @@ bool iscor(char ch)
         return true;
         else
         return false;
-        
+
         default:
         cout<<1;
         return false;
@@ -41,7 +41,7 @@ bool iscor(char ch)
 }
 bool isbal(string s)
 {
-    
+
     while(!st.empty())
     st.pop();
     for(int i=0;i<s.size();i++)
@@ -51,24 +51,24 @@ bool isbal(string s)
             //cout<<s[i];
             st.push(s[i]);
         }
-        
+
         else if((s[i]=='}'||s[i]==']'||s[i]==')')&&iscor(s[i]))
         {
             //cout<<1;
-            
+
             st.pop();
-            
+
         }
-        
+
         else
         {
-            
+
             return false;
         }
     }
     if(st.empty())
     return true;
-    
+
     else
     {
         //cout<<st.top();
@@ -94,4 +94,3 @@ int main()
         }
     }
 }
-
