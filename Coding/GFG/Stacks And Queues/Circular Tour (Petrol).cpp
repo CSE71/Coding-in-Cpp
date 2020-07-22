@@ -30,7 +30,7 @@
             cout<<tour(p,n)<<endl;
         }
     }
-    
+
 
 /*This is a function problem.You only need to complete the function given below*/
 /*
@@ -50,16 +50,16 @@ int tour(petrolPump p[],int n)
     {
         flag=1;
         petrol = p[i].petrol;
-        
-        
-        
+
+
+
         if(petrol<p[i].distance)
         {
             flag=0;
         }
-        
+
         petrol -=p[i].distance;
-        
+
         if(flag==1)
         {
             for(int j=(i+1)%n;j!=i;j=(j+1)%n)
@@ -68,13 +68,13 @@ int tour(petrolPump p[],int n)
                 if(petrol<p[j].distance)
                 {
                     flag=0;
-                    
+
                 }
-                
+
                 petrol -=p[j].distance;
             }
         }
-        
+
         if(flag==1)
         {
             return i;
@@ -84,18 +84,18 @@ int tour(petrolPump p[],int n)
          {
          int l = (i+n-1)%n;
          petrol = p[i].petrol;
-         
+
          if(petrol<p[l].distance)
          continue;
-         
+
          petrol -=p[l].distance;
-         
+
          for(int j=(l+n-1)%n;j!=i;j=(j+n-1)%n)
          {
          petrol+=p[j].petrol;
          if(petrol<p[j].distance)
          continue;
-         
+
          petrol -=p[j].distance;
          }
          return i;
@@ -103,5 +103,7 @@ int tour(petrolPump p[],int n)
          */
     }
     return -1;
-    
+
 }
+
+// Better solutions : https://www.geeksforgeeks.org/find-a-tour-that-visits-all-stations/
