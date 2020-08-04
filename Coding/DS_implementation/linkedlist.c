@@ -53,7 +53,10 @@ struct node* delete_node(struct node* head, int pos)
     }
     
     while(num<pos-1 && temp->next)
-    temp=temp->next;
+    {
+        temp=temp->next;
+        num+=1;
+    }
     
         
     if(num<pos-1)
