@@ -26,7 +26,7 @@ int maxChainLen(struct val p[],int n)
     {
         for(int j=0;j<i;j++)
         {
-            if(p[i].first>p[j].second && count[i]<count[j]+1)
+            if(p[j].second < p[i].first&& count[i]<count[j]+1)
             count[i]=count[j]+1;
             if(max<count[i])
             max = count[i];

@@ -40,10 +40,12 @@ int main()
         {
             for(int j=1;j<=maxi;j++)
             {
-                dp[i][j] = dp[i-1][j];
+                dp[i][j] = dp[i-1][j]; // The row before contains the current value of the sack. 
+                                        // If it isn't possible to add this current element, just carry forward the value.
                 if(j>=w[i-1])
                 {
-                    dp[i][j] = max(dp[i-1][j],dp[i-1][j-w[i-1]]+val[i-1]);
+                    dp[i][j] = max(dp[i-1][j],dp[i-1][j-w[i-1]]+val[i-1]); // Need to compare between the current value of knapsack and adding the value 
+                                                                            // removing the current object's  weight from the bag. 
                 }
                
             }
