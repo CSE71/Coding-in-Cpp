@@ -42,3 +42,24 @@ int main()
     cout << countOfSubstringWithKOnes(s, K) << endl;
     return 0;
 }
+
+/*
+
+freq - Frequency of ones array. Stores the number of substrings for each number of ones.
+
+Ex. 1 - 1000101, k=2
+
+        - ; countOfOne = 0 ; freq = {1,0,0,0,0,0,0}   ; Substrings for count=0 = {} //empty is one substring
+        1 ; countOfOne = 1 ; freq = {1,1,0,0,0,0,0}   ; Substrings for count=1 = {1}
+        0 ; countOfOne = 1 ; freq = {1,2,0,0,0,0,0}   ; Substrings for count=1 = {1, 10}
+        0 ; countOfOne = 1 ; freq = {1,3,0,0,0,0,0}   ; Substrings for count=1 = {1, 10, 100}
+        0 ; countOfOne = 1 ; freq = {1,4,0,0,0,0,0}   ; Substrings for count=1 = {1, 10, 100, 1000}
+        1 ; countOfOne = 2 ; res+ = freq[2-2] = 1 ; freq = {1,4,1,0,0,0,0}   ; Substrings for count=2 = {10001}
+
+        Basically counts the number of substrings at the first index
+
+        0 ; countOfOne = 2 ; res+ = freq[2-2] = 1+1=2 ; freq = {1,4,2,0,0,0,0}   ; Substrings for count=2 = {10001,100010}
+        1 ; countOfOne = 3 ; res+ = freq[3-2] = 2+4=6 ; freq = {1,4,2,1,0,0,0}   ; Substrings for count=3 = {10001,100010,000101,00101,0101,101}
+
+
+*/
