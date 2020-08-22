@@ -8,11 +8,13 @@
 // C++ Program to print Bottom View of Binary Tree
 #include</Users/suryad/Coding/Coding/Coding/stdc++.h>
 using namespace std;
+
 // Tree node class
 struct Node
 {
     int data; //data of the node
     Node *left, *right; //left and right references
+
     // Constructor of tree node
     Node(int key)
     {
@@ -20,126 +22,57 @@ struct Node
         left = right = NULL;
     }
 };
-// Method that prints the bottom view.
-void bottomView(Node *root);
-/* Driver program to test size function*/
-int main()
-{
-    int t;
-    struct Node *child;
-    scanf("%d
-          ", &t);
-          while (t--)
-          {
-              map<int, Node*> m;
-              int n;
-              scanf("%d
-                    ",&n);
-                    struct Node *root = NULL;
-                    while (n--)
-                    {
-                        Node *parent;
-                        char lr;
-                        int n1, n2;
-                        scanf("%d %d %c", &n1, &n2, &lr);
-                        if (m.find(n1) == m.end())
-                        {
-                            parent = new Node(n1);
-                            m[n1] = parent;
-                            if (root == NULL)
-                                root = parent;
-                        }
-                        else
-                            parent = m[n1];
-                        child = new Node(n2);
-                        if (lr == 'L')
-                            parent->left = child;
-                        else
-                            parent->right = child;
-                        m[n2]  = child;
-                    }
-                    bottomView(root);
-                    cout << endl;
-                    }
-                    return 0;
-                    }
-                    
-                    
-              /*This is a function problem.You only need to complete the function given below*/
-              /* Tree node class
-               struct Node
-               {
-               int data; //data of the node
-               Node *left, *right; //left and right references
-               // Constructor of tree node
-               Node(int key)
-               {
-               data = key;
-               left = right = NULL;
-               }
-               }; */
-                    // Method that prints the bottom view.
 
+// Method that prints the bottom view.
 void bottomView(Node *root)
 {
-    if (root == NULL)
+    if(root==NULL)
         return;
-    
-    // Initialize a variable 'hd' with 0
-    // for the root element.
-    int hd = 0;
-    
-    // TreeMap which stores key value pair
-    // sorted on key value
-    map<int, int> m; // To sort based on hd
-    map<Node  *, int> mh; // To hold hd
-    
-    // Queue to store tree nodes in level
-    // order traversal
-    queue<Node *> q; // for traversal
-    
-    // Assign initialized horizontal distance
-    // value to root node and add it to the queue.
-    mh[root] = hd;
-    q.push(root);
-    
-    // Loop until the queue is empty (standard
-    // level order loop)
-    while (!q.empty())
+    queue<pair<Node*,int>> q;
+    map<int,int> mp;
+
+    q.push({root,0});
+
+    while(!q.empty())
     {
-        Node *temp = q.front();
+        pair<Node*,int> p = q.front();
         q.pop();
-        
-        // Extract the horizontal distance value
-        // from the dequeued tree node.
-        hd = mh[temp];
-        
-        // Put the dequeued tree node to TreeMap
-        // having key as horizontal distance. Every
-        // time we find a node having same horizontal
-        // distance we need to replace the data in
-        // the map.
-        m[hd] = temp->data; // Keeps getting overwritten
-        
-        // If the dequeued node has a left child add
-        // it to the queue with a horizontal distance hd-1.
-        if (temp->left != NULL)
+
+        Node* cur = p.first;
+        int hd = p.second;
+        mp[hd] = cur->data;
+
+        if(cur->left)
         {
-            mh[temp->left] = hd-1;
-            q.push(temp->left);
+            q.push({cur->left,hd-1});
         }
-        
-        // If the dequeued node has a left child add
-        // it to the queue with a horizontal distance
-        // hd+1.
-        if (temp->right != NULL)
+        if(cur->right)
         {
-            mh[temp->right] = hd+1;
-            q.push(temp->right);
+            q.push({cur->right,hd+1});
         }
+
     }
-    
-    // Traverse the map elements using the iterator.
-    for (auto i = m.begin(); i != m.end(); ++i)
-        cout << i->second << " ";
+
+    for(auto x=mp.begin();x!=mp.end();x++)
+        cout<<x->second<<" ";
+
+
+
+}
+
+// Driver Code
+int main()
+{
+    Node *root = new Node(20);
+    root->left = new Node(8);
+    root->right = new Node(22);
+    root->left->left = new Node(5);
+    root->left->right = new Node(3);
+    root->right->left = new Node(4);
+    root->right->right = new Node(25);
+    root->left->right->left = new Node(10);
+    root->left->right->right = new Node(14);
+    cout << "Bottom view of the given binary tree :\n";
+    bottomView(root);
+    return 0;
 }

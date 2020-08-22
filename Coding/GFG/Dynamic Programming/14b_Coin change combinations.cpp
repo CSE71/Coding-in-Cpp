@@ -37,18 +37,18 @@ int main()
             {
                 if(i==0&&j==0)
                 dp[i][j]=1;
-                
+
                 else if(j==0)
                 dp[i][j]=1;
-                
+
                 else if(i==0)
                 dp[i][j]=0;
-                
+
                 else
                 {
                     dp[i][j] = dp[i-1][j];
                     if(j>=a[i-1])
-                    dp[i][j] = dp[i-1][j]+dp[i][j-a[i-1]];
+                    dp[i][j] = dp[i-1][j]+dp[i][j-a[i-1]]; // i not i-1 as multiple can be used
                 }
             }
         }

@@ -38,24 +38,22 @@ Node* mergeKLists(Node* arr[], int N)
 {
     int last=N-1; // last index in array
     // repeat until only one list is left
+    int i = 0, j = last;
     while (last != 0)
-    {
-        int i = 0, j = last;
+    {  
+        // merge List i with List j and store
+        // merged list in List i
+        arr[i] = SortedMerge(arr[i], arr[j]);
 
-        // (i, j) forms a pair
-        while (i < j)
-        {
-            // merge List i with List j and store
-            // merged list in List i
-            arr[i] = SortedMerge(arr[i], arr[j]);
+        // consider next pair
+        i++, j--;
 
-            // consider next pair
-            i++, j--;
+        // If all pairs are merged, update last
+        if (i >= j){
+            i=0;
+            last = j;
+          }
 
-            // If all pairs are merged, update last
-            if (i >= j)
-                last = j;
-        }
     }
 
     return arr[0];
