@@ -17,7 +17,7 @@ string longestPrefix(string &s) {
 
 
 // KMP method (Perfect for the problem)
-
+// O(n)
 string longestPrefix(string &s) {
         int i=1,len=0;
         int m = int(s.size());
@@ -39,7 +39,7 @@ string longestPrefix(string &s) {
                     len = lps[len-1];
 
                     //This is tricky. Consider the example "ababe......ababa", i is index of 'b', len==4. The longest prefix suffix is "abab",
-                   //when pat[i]!=pat[len], we get new prefix "ababe" and suffix "ababa", which are not equal. 
+                   //when pat[i]!=pat[len], we get new prefix "ababe" and suffix "ababa", which are not equal.
                    //This means we can't increment length of lps based on current lps "abab" with len==4. We may want to increment it based on
                    //the longest prefix suffix with length < len==4, which by definition is lps of "abab". So we set len to lps[len-1],
                    //which is 2, now the lps is "ab". Then check pat[i]==pat[len] again due to the while loop, which is also the reason
